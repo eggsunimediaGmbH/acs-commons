@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  author:
+    container_name: author-6-4
+    image: registry.aem.eggs.de/eggs/aem-author:6.4
+    restart: always
+    ports:
+      - "4502:4502"
+      - "5005:5005"
+    environment:
+      DOCKER_AEM_RUN_MODES: author,eggs,dev
+      JAVA_EXTRA_OPT_ARRAY: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
