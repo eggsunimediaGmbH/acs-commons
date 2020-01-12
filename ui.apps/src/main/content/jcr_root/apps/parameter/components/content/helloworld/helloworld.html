@@ -1,13 +1,13 @@
-<template data-sly-template.link="${@ href, dataHref, text, title, target, iconClass, anchor, trackingMetadata, dontTrack, attributes, id}">
+<template data-sly-template.link="${@ htlParameter}">
     <p data-sly-test="${properties.text}">Text property: ${properties.text}</p>
 
-    <pre data-sly-use.hello="${'de.eggs.core.models.HelloWorldModel' @ linkClasses=['custom-link']}">
+    <pre data-sly-use.hello="${'de.eggs.core.models.HelloWorldModel' @ htlParameter=htlParameter}">
     HelloWorldModel says:
     ${hello.message}
     </pre>
 </template>
 
-<p data-sly-call="${link}" >
+<p data-sly-call="${link @ htlParameter=['custom-link','morelink']}" >
     test
 </p>
 

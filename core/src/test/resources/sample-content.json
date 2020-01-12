@@ -1,0 +1,8 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "jcr:createdBy": "admin",
+  "jcr:lastModifiedBy": "admin",
+  "jcr:created": "Fri Jan 10 2020 10:28:10 GMT+0100",
+  "jcr:lastModified": "Fri Jan 10 2020 10:28:10 GMT+0100",
+  "sling:resourceType": "parameter/components/content/helloworld"
+}

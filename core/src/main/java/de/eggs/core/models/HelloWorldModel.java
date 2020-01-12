@@ -54,7 +54,7 @@ public class HelloWorldModel {
 
     @Inject
     @org.apache.sling.models.annotations.Optional
-    Object linkClasses;
+    Object htlParameter;
 
     private String message;
 
@@ -69,7 +69,7 @@ public class HelloWorldModel {
             + "\tThis is instance: " + settings.getSlingId() + "\n"
             + "\tResource type is: " + resourceType + "\n"
             + "\tCurrent page is: " + currentPagePath + "\n"
-            + "\tlinkClasses page is: " + String.join(",", getLinkClasses()) + "\n";
+            + "\thtlParameter page is: " + String.join(",", getHtlParameter()) + "\n";
     }
 
     public String getMessage() {
@@ -83,19 +83,19 @@ public class HelloWorldModel {
      *
      * @return set if class strings
      */
-    private Set<String> getLinkClasses() {
+    public Set<String> getHtlParameter() {
         final Set<String> classes = new HashSet<>();
 
-        if (linkClasses == null) {
+        if (htlParameter == null) {
             return classes;
         }
 
-        if (linkClasses instanceof String) {
+        if (htlParameter instanceof String) {
             // if linkClasses is a string we can directly add it
-            addClassString(classes, (String) linkClasses);
-        } else if (linkClasses instanceof Object[]) {
+            addClassString(classes, (String) htlParameter);
+        } else if (htlParameter instanceof Object[]) {
             // if we have an array we have to check each item
-            for (Object o : (Object[]) linkClasses) {
+            for (Object o : (Object[]) htlParameter) {
                 if (o instanceof String) {
                     classes.add(((String) o).trim());
                 }
